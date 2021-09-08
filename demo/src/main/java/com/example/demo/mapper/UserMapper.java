@@ -11,7 +11,11 @@ import java.util.UUID;
 public class UserMapper {
 
     public User mapToUser(UserCreationRequest request) {
-        //TODO
-        return new User(UUID.randomUUID(), Collections.emptyList(), request.getAge(), request.getName(), request.getDocumentNumber());
+        //TODO estos setters no respetan inmutabilidad
+        var user = new User();
+        user.setAge(request.getAge());
+        user.setName(request.getName());
+        user.setDocumentNumber(request.getDocumentNumber());
+        return user;
     }
 }

@@ -19,9 +19,7 @@ public class UserService {
         if(user != null){
             throw new RuntimeException("User already created");
         }
-        if(user == null){
-            user = userRepository.save(userMapper.mapToUser(request));
-        }
+        user = userRepository.save(userMapper.mapToUser(request));
         return user;
     }
 

@@ -1,19 +1,19 @@
 package com.example.demo.model;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import org.springframework.data.annotation.Id;
+import lombok.*;
 
-import java.util.List;
-import java.util.UUID;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Getter
-@RequiredArgsConstructor
+@Setter
+@Entity
 public class User {
     @Id
-    private final UUID userId;
-    private final List<Integer> friendsId;
-    private final Integer age;
-    private final String name;
-    private final String documentNumber;
+    @GeneratedValue
+    private Long userId;
+    private Integer age;
+    private String name;
+    private String documentNumber;
 }
